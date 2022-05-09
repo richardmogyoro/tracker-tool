@@ -16,22 +16,25 @@
 
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold" th:text="${totalReportedCases}"></h1>
+            <h1 class="display-5 fw-bold" th:text="${#numbers.formatDecimal(totalReportedCases, 0, 'DEFAULT', 0, 'DEFAULT')}"></h1>
             <p class="col-md-8 fs-4">Total cases globally up to today.</p>
+            <hr class="my-4">
+            <h1 class="display-5 fw-bold" th:text="${#numbers.formatDecimal(totalNewCases, 0, 'DEFAULT', 0, 'DEFAULT')}"></h1>
+            <p class="col-md-8 fs-4">New cases since yesterday.</p>
         </div>
     </div>
     <table class="table">
         <tr>
-            <th>State</th>
             <th>Country</th>
+            <th>State</th>
             <th>Total cases reported</th>
             <th>Increase since yesterday</th>
         </tr>
         <tr th:each="locationStat : ${locationStats}">
-            <td th:text="${locationStat.state}"></td>
             <td th:text="${locationStat.country}"></td>
-            <td th:text="${locationStat.latestTotalCases}">0</td>
-            <td th:text="${locationStat.deltaTodayYesterday}">0</td>
+            <td th:text="${locationStat.state}"></td>
+            <td th:text="${#numbers.formatDecimal(locationStat.latestTotalCases, 0, 'DEFAULT', 0, 'DEFAULT')}">0</td>
+            <td th:text="${#numbers.formatDecimal(locationStat.deltaTodayYesterday, 0, 'DEFAULT', 0, 'DEFAULT')}">0</td>
         </tr>
     </table>
 </div>
