@@ -6,6 +6,16 @@ public class LocationStats {
     private String country;
     private int latestTotalCases;
 
+    public int getDeltaTodayYesterday() {
+        return deltaTodayYesterday;
+    }
+
+    public void setDeltaTodayYesterday(int deltaTodayYesterday) {
+        this.deltaTodayYesterday = deltaTodayYesterday;
+    }
+
+    private int deltaTodayYesterday;
+
     public String getState() {
         return state;
     }
