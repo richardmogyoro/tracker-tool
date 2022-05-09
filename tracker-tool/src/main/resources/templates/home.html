@@ -11,6 +11,16 @@
 
 <body>
 
+<h1>Coronavirus Tracker</h1>
+<p>These are the cumulated number of reported COVID-19 infections globally up to this date.</p>
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold" th:text="${totalReportedCases}"></h1>
+        <p class="col-md-8 fs-4">Total cases globally up to today.</p>
+    </div>
+</div>
+
 <table>
     <tr>
         <th>State</th>
